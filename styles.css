@@ -678,27 +678,75 @@ strong {
   opacity: 0.7;
 }
 
-/* --- Writing --- */
-.writing-topics {
+/* --- Writing / Featured Articles --- */
+.featured-articles {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: var(--gap);
+  flex-direction: column;
+  margin-bottom: 32px;
 }
 
-.writing-tag {
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 8px 20px;
-  border-radius: 100px;
-  border: 1px solid var(--border-dark);
-  transition: border-color 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
+.featured-article {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.3s var(--ease);
 }
 
-.writing-tag:hover {
-  border-color: var(--green);
-  background: rgba(46, 204, 113, 0.06);
+.featured-article:first-child {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.featured-article:hover {
+  padding-left: 12px;
+}
+
+.featured-article:hover .fa-title {
   color: var(--green);
+}
+
+.featured-article:hover svg {
+  transform: translate(3px, -3px);
+  color: var(--green);
+}
+
+.fa-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-width: 100px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.fa-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  flex: 1;
+  letter-spacing: -0.01em;
+  transition: color 0.3s var(--ease);
+}
+
+.featured-article svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: var(--gap);
+  transition: gap 0.3s var(--ease);
+}
+
+.view-all-link:hover {
+  gap: 16px;
 }
 
 .quote {
