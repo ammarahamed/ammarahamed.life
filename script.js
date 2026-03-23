@@ -133,43 +133,74 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Testimonials carousel ---
-  const slider = document.querySelector('.testimonials-slider');
-  const prevBtn = document.querySelector('.testi-prev');
-  const nextBtn = document.querySelector('.testi-next');
+  // --- Testimonial Carousel (Phidata style) ---
+  const carouselSlider = document.querySelector('.carousel-slider');
+  const carouselPrev = document.querySelector('.carousel-prev');
+  const carouselNext = document.querySelector('.carousel-next');
 
-  if (slider && prevBtn && nextBtn) {
-    let testiIndex = 0;
-    const cards = slider.querySelectorAll('.testi-card');
-    const gap = 20;
+  if (carouselSlider && carouselPrev && carouselNext) {
+    let carouselIndex = 0;
+    const carouselCards = carouselSlider.querySelectorAll('.carousel-card');
+    const gap = 24;
 
-    function getCardWidth() {
-      if (!cards.length) return 400;
-      return cards[0].offsetWidth + gap;
+    function getCarouselCardWidth() {
+      if (!carouselCards.length) return 404;
+      return carouselCards[0].offsetWidth + gap;
     }
 
-    function getMaxIndex() {
-      const trackWidth = slider.parentElement.offsetWidth;
-      const totalWidth = cards.length * getCardWidth() - gap;
-      return Math.max(0, Math.ceil((totalWidth - trackWidth) / getCardWidth()));
+    function updateActiveCard() {
+      // Calculate which card is most centered in the viewport
+      const trackRect = carouselSlider.parentElement.getBoundingClientRect();
+      const trackCenter = trackRect.left + trackRect.width / 2;
+
+      carouselCards.forEach((card, i) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const distance = Math.abs(trackCenter - cardCenter);
+        if (distance < card.offsetWidth * 0.6) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
     }
 
-    function slideTestimonials() {
-      slider.style.transform = `translateX(-${testiIndex * getCardWidth()}px)`;
+    function slideCarousel() {
+      const trackWidth = carouselSlider.parentElement.offsetWidth;
+      const cardWidth = getCarouselCardWidth();
+      const totalWidth = carouselCards.length * cardWidth - gap;
+
+      // Center the active card in the track
+      const centerOffset = (trackWidth - (cardWidth - gap)) / 2;
+      let offset = carouselIndex * cardWidth - centerOffset;
+
+      // Clamp so we don't scroll past edges
+      offset = Math.max(0, Math.min(offset, totalWidth - trackWidth));
+
+      carouselSlider.style.transform = `translateX(-${offset}px)`;
+
+      // Update active states
+      carouselCards.forEach((card, i) => {
+        card.classList.toggle('active', i === carouselIndex);
+      });
     }
 
-    nextBtn.addEventListener('click', () => {
-      if (testiIndex < getMaxIndex()) {
-        testiIndex++;
-        slideTestimonials();
+    carouselNext.addEventListener('click', () => {
+      if (carouselIndex < carouselCards.length - 1) {
+        carouselIndex++;
+        slideCarousel();
       }
     });
 
-    prevBtn.addEventListener('click', () => {
-      if (testiIndex > 0) {
-        testiIndex--;
-        slideTestimonials();
+    carouselPrev.addEventListener('click', () => {
+      if (carouselIndex > 0) {
+        carouselIndex--;
+        slideCarousel();
       }
     });
+
+    // Initialize — start at first card
+    carouselIndex = 0;
+    setTimeout(() => slideCarousel(), 100);
   }
 });
