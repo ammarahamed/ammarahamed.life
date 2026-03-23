@@ -132,6 +132,20 @@ img { max-width: 100%; display: block; }
 strong { font-weight: 600; color: var(--text); }
 ::selection { background: var(--text); color: var(--bg); }
 
+/* --- Scroll Progress --- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--accent);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+[data-theme="colorful"] .scroll-progress { background: #1a6b4a; }
+[data-theme="dark"] .scroll-progress { background: #f0f0ee; }
+
 /* --- Banner --- */
 .banner {
   background: var(--bg-alt);
