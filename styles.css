@@ -434,7 +434,7 @@ strong { font-weight: 600; color: var(--text); }
 
 .contact-sub { font-size: 1.05rem; color: #a0a0a0; max-width: 540px; margin-bottom: 48px; line-height: 1.65; }
 
-.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
 .contact-card {
   display: flex;
