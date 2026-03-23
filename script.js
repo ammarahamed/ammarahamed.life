@@ -126,8 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (saved) html.setAttribute('data-theme', saved);
 
   if (themeToggle) {
+    const themeOrder = ['light', 'dark', 'colorful'];
     themeToggle.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      const current = html.getAttribute('data-theme') || 'light';
+      const idx = themeOrder.indexOf(current);
+      const next = themeOrder[(idx + 1) % themeOrder.length];
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
     });
