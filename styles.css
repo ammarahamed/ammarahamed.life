@@ -273,6 +273,9 @@ strong { font-weight: 600; color: var(--text); }
   max-width: 640px;
   margin-bottom: 56px;
   line-height: 1.65;
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 /* --- Work Cards --- */
@@ -482,9 +485,10 @@ strong { font-weight: 600; color: var(--text); }
 .process-icon svg { color: var(--text); }
 
 .process-footnote {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: var(--text-muted);
+  margin-top: 32px;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 .process-footnote em { font-style: italic; }
 
@@ -570,7 +574,7 @@ strong { font-weight: 600; color: var(--text); }
 .family-photo:hover img { transform: scale(1.03); }
 
 /* --- Contact --- */
-.cookie-text { font-size: 1.4rem; color: #a0a0a0; margin-bottom: 28px; line-height: 1.6; font-weight: 400; }
+.cookie-text { font-size: 1.8rem; color: #b0b0b0; margin-bottom: 28px; line-height: 1.5; font-weight: 400; }
 
 .schedule-link {
   display: inline-block;
