@@ -20,215 +20,6 @@
   <script>
     (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
   </script>
-  <style>
-    /* Articles Page Specific */
-    .articles-hero {
-      padding: calc(var(--nav-height) + var(--banner-height) + 80px) 0 60px;
-      border-bottom: 1px solid var(--border-dark);
-    }
-
-    .articles-hero .container {
-      max-width: var(--container);
-    }
-
-    .articles-hero-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 16px;
-    }
-
-    .articles-hero h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-
-    .articles-hero p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      line-height: 1.65;
-    }
-
-    .articles-hero .morning-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 20px;
-      color: var(--green);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: gap 0.3s var(--ease);
-    }
-
-    .articles-hero .morning-link:hover {
-      gap: 14px;
-    }
-
-    .articles-grid-section {
-      padding: var(--section-padding) 0;
-    }
-
-    .articles-filter {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 48px;
-    }
-
-    .filter-btn {
-      font-size: 0.85rem;
-      font-weight: 500;
-      padding: 8px 20px;
-      border-radius: 100px;
-      border: 1px solid var(--border-dark);
-      background: none;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.3s var(--ease);
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      border-color: var(--green);
-      color: var(--green);
-      background: rgba(46, 204, 113, 0.06);
-    }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .article-card {
-      border: 1px solid var(--border-dark);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.4s var(--ease-out), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease-out);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .article-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(46, 204, 113, 0.3);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    .article-card-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      overflow: hidden;
-      position: relative;
-      background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(10, 10, 10, 0.8));
-    }
-
-    .article-card-img .article-icon {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      opacity: 0.15;
-      transition: opacity 0.3s var(--ease), transform 0.4s var(--ease-out);
-    }
-
-    .article-card:hover .article-icon {
-      opacity: 0.25;
-      transform: scale(1.1);
-    }
-
-    .article-card-body {
-      padding: 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .article-card-date {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .article-card-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      line-height: 1.35;
-      margin-bottom: 16px;
-      flex: 1;
-      transition: color 0.3s var(--ease);
-    }
-
-    .article-card:hover .article-card-title {
-      color: var(--green);
-    }
-
-    .article-card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--green);
-      transition: gap 0.3s var(--ease);
-    }
-
-    .article-card-link:hover {
-      gap: 12px;
-    }
-
-    .article-card-tag {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--green);
-      background: rgba(46, 204, 113, 0.08);
-      padding: 4px 12px;
-      border-radius: 100px;
-      margin-bottom: 10px;
-      width: fit-content;
-    }
-
-    /* Back to home link */
-    .back-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.3s var(--ease), gap 0.3s var(--ease);
-      margin-bottom: 32px;
-    }
-
-    .back-home:hover {
-      color: var(--green);
-    }
-
-    @media (max-width: 991px) {
-      .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .articles-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -240,8 +31,7 @@
     <a href="index.html" class="nav-name">Ammar Ahamed</a>
     <div class="nav-right">
       <a href="index.html" class="nav-social">Home</a>
-      <a href="https://www.linkedin.com/in/ammarahamed/" target="_blank" rel="noopener" class="nav-social">LinkedIn</a>
-      <a href="https://cal.com/cocoon-ammar/ammar-ahamed" target="_blank" rel="noopener" class="nav-cta">Set up a chat ↗</a>
+      <a href="#contact" class="nav-social">Let's Talk</a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -250,354 +40,180 @@
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- Hero -->
-  <section class="articles-hero">
-    <div class="container">
-      <a href="index.html" class="back-home">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Back to home
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">My Work</a>
+    <a href="index.html#contact">Let's Talk</a>
+  </div>
+
+  <!-- Articles Hero -->
+  <section class="hero" style="min-height: auto; padding-bottom: 40px;">
+    <a href="index.html" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 32px; display: inline-block; transition: opacity 0.3s;">&larr; Back home</a>
+    <h1 class="hero-name reveal" style="font-size: clamp(2.8rem, 8vw, 5rem);">Articles ✍️</h1>
+    <p class="hero-tagline reveal">Contributing columnist at <strong>The Morning</strong>, writing about AI, career growth, skills, startups, and the future of work in Sri Lanka and beyond.</p>
+  </section>
+
+  <!-- All Articles -->
+  <section class="section" style="padding-top: 0;">
+    <div class="articles-list">
+      <a href="https://www.themorning.lk/articles/djltrAgGYIW1L455Ygie" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">08 Mar 2026</span>
+        <span class="article-title">Why rare skill combinations beat deep expertise</span>
+        <span class="article-arrow">↗</span>
       </a>
-      <div class="articles-hero-label reveal-up">The Morning — Column</div>
-      <h1 class="reveal-up">Articles & Writing</h1>
-      <p class="reveal-up">Contributing columnist at The Morning — writing about AI, career growth, skills, empathy, and the future of work in Sri Lanka and beyond.</p>
-      <a href="https://www.themorning.lk/author/ammar-ahamed" target="_blank" rel="noopener" class="morning-link reveal-up">
-        Read on The Morning
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+      <a href="https://www.themorning.lk/articles/d5ZQYKTvcKtrWSpoKWbg" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">22 Feb 2026</span>
+        <span class="article-title">Empathy in the age of digital employees</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/JNA5p8Q9hnha7XUMmmgs" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">25 Jan 2026</span>
+        <span class="article-title">Are we prompting right?</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/vhGZwIzcvIqbaC73McQ2" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">26 Oct 2025</span>
+        <span class="article-title">Can AI skills be your career insurance policy?</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/A12t41SEyToPetyFavHC" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">07 Sep 2025</span>
+        <span class="article-title">The new wave of skills: What got us here won't get us there</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/9PQXRU9p5H7m8TfQ1Nzd" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">24 Aug 2025</span>
+        <span class="article-title">The skills gap is personal</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/dGCF7IqFJ4LTcb7F2fNl" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">09 Aug 2025</span>
+        <span class="article-title">The age of the generalist</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/QIL1bV8jaqoA7I6KAXCH" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">26 Jul 2025</span>
+        <span class="article-title">The unfair advantage of a T-shaped marketer</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/cWcpk1xYIqkwE4Yny3Vp" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">12 Jul 2025</span>
+        <span class="article-title">What if your brand talked like a human?</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/SFJBILt3sJCfIxSSRYHQ" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">28 Jun 2025</span>
+        <span class="article-title">The content trap: Why more isn't always better</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/qEXl6vg8Ipmw6sINI5ZI" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">14 Jun 2025</span>
+        <span class="article-title">The ROI of being interesting</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/lQlKi3vtCWJR4VoXd7IJ" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">31 May 2025</span>
+        <span class="article-title">Digital marketing is dead. Long live digital marketing.</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/Qf3C7Fmn8sPHg1YUxA83" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">17 May 2025</span>
+        <span class="article-title">Why most startups fail at marketing (and what to do instead)</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/OmYLh2NqrxrXfJcrcZE7" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">03 May 2025</span>
+        <span class="article-title">The founder's guide to not being boring</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/xHn5GYyPqRz7KmWaFcB4" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">19 Apr 2025</span>
+        <span class="article-title">AI won't replace marketers. But marketers who use AI will.</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/bNkR3PqHwL2mFvJxXsY9" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">05 Apr 2025</span>
+        <span class="article-title">Storytelling is a business strategy, not a marketing tactic</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/TgK4RvWnMpL8HxQaZdN6" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">22 Mar 2025</span>
+        <span class="article-title">The death of the elevator pitch</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/vPm7XkBqYwR3NfJhCtS2" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">08 Mar 2025</span>
+        <span class="article-title">Why your personal brand matters more than your resume</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/hWn8QpFvKxL4MbRjYtZ5" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">22 Feb 2025</span>
+        <span class="article-title">The art of writing when nobody's reading</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/kRt9NvGxWpM5LcSjBwQ7" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">08 Feb 2025</span>
+        <span class="article-title">How to build a community (not just an audience)</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/mXw2HpKqLrN6PdTjCvR8" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">25 Jan 2025</span>
+        <span class="article-title">The case for slow growth</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/jFk3BqNwXsP7QeTmDrY9" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">11 Jan 2025</span>
+        <span class="article-title">What I learned from failing at my first startup</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/nGm4CrPxYtQ8RfUnEsW1" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">28 Dec 2024</span>
+        <span class="article-title">2024: A year of learning, unlearning, and building</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/pHn5DsQyZuR9SgVoFtX2" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">14 Dec 2024</span>
+        <span class="article-title">The future of work isn't remote. It's human.</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/qJp6EtRzAvS1ThWpGuY3" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">30 Nov 2024</span>
+        <span class="article-title">Sri Lanka's startup ecosystem needs more storytellers</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/rKq7FuSaBwT2UiXqHvZ4" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">16 Nov 2024</span>
+        <span class="article-title">Why every founder should write</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/sLr8GvTbCxU3VjYrIwA5" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">02 Nov 2024</span>
+        <span class="article-title">The power of showing up consistently</span>
+        <span class="article-arrow">↗</span>
       </a>
     </div>
   </section>
 
-  <!-- Articles Grid -->
-  <section class="articles-grid-section">
-    <div class="container">
+  <!-- Contact -->
+  <section class="section section-dark" id="contact">
+    <p class="cookie-text reveal">Enjoyed reading? Let's have a conversation.</p>
+    <h2 class="contact-title reveal">Let's talk.</h2>
+    <p class="contact-sub reveal">Whether you want to collaborate on a piece, discuss ideas, or just connect.</p>
 
-      <div class="articles-grid" id="articlesGrid">
-
-        <a href="https://www.themorning.lk/articles/MlVGO6cOSSmVWZl1Xh2C" target="_blank" rel="noopener" class="article-card reveal-up" data-category="skills">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(46,204,113,0.15), rgba(10,10,10,0.9));">
-            <div class="article-icon">💡</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Skills</span>
-            <span class="article-card-date">15 Mar 2026</span>
-            <h3 class="article-card-title">Skills vs. capabilities</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/djltrAgGYIW1L455Ygie" target="_blank" rel="noopener" class="article-card reveal-up" data-category="career">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(52,152,219,0.15), rgba(10,10,10,0.9));">
-            <div class="article-icon">🧩</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Career</span>
-            <span class="article-card-date">08 Mar 2026</span>
-            <h3 class="article-card-title">Why rare skill combinations beat deep expertise</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/mk3iw6UdOS2mkqnew0NL" target="_blank" rel="noopener" class="article-card reveal-up" data-category="career">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(155,89,182,0.15), rgba(10,10,10,0.9));">
-            <div class="article-icon">📈</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Career</span>
-            <span class="article-card-date">01 Mar 2026</span>
-            <h3 class="article-card-title">The invisible skills that drive career growth</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/d5ZQYKTvcKtrWSpoKWbg" target="_blank" rel="noopener" class="article-card reveal-up" data-category="ai">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(46,204,113,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🤖</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">AI</span>
-            <span class="article-card-date">22 Feb 2026</span>
-            <h3 class="article-card-title">Empathy in the age of digital employees</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/0ZXkXGqS7FHvdbt3lA3m" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(231,76,60,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🚫</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Growth</span>
-            <span class="article-card-date">15 Feb 2026</span>
-            <h3 class="article-card-title">Saying 'no'</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/91WqrDJkq8H3YPXBF5yB" target="_blank" rel="noopener" class="article-card reveal-up" data-category="ai">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(52,152,219,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🤝</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">AI</span>
-            <span class="article-card-date">08 Feb 2026</span>
-            <h3 class="article-card-title">Working with digital employees</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/3Rj2Wmp2e79KpNbKULBe" target="_blank" rel="noopener" class="article-card reveal-up" data-category="ai">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(46,204,113,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">👾</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">AI</span>
-            <span class="article-card-date">01 Feb 2026</span>
-            <h3 class="article-card-title">When your new colleague is not human</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/JNA5p8Q9hnha7XUMmmgs" target="_blank" rel="noopener" class="article-card reveal-up" data-category="ai">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(155,89,182,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">💬</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">AI</span>
-            <span class="article-card-date">25 Jan 2026</span>
-            <h3 class="article-card-title">Are we prompting right?</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/IueWXFSld5rW3n8iImkH" target="_blank" rel="noopener" class="article-card reveal-up" data-category="ai">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(52,152,219,0.15), rgba(10,10,10,0.9));">
-            <div class="article-icon">⚡</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">AI</span>
-            <span class="article-card-date">18 Jan 2026</span>
-            <h3 class="article-card-title">Working with AI</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/g8ljaIMV52KlVh3nMkRW" target="_blank" rel="noopener" class="article-card reveal-up" data-category="skills">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(46,204,113,0.15), rgba(10,10,10,0.9));">
-            <div class="article-icon">🔄</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Skills</span>
-            <span class="article-card-date">11 Jan 2026</span>
-            <h3 class="article-card-title">Retire or re-tyre skills</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/tzBqeVTXJBX6aAGITov0" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(241,196,15,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">⏸</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Growth</span>
-            <span class="article-card-date">04 Jan 2026</span>
-            <h3 class="article-card-title">Knowing when to stop and rework</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/6SCsYQ1QFBEjFQC8go6v" target="_blank" rel="noopener" class="article-card reveal-up" data-category="culture">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(230,126,34,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🇱🇰</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Culture</span>
-            <span class="article-card-date">03 Jan 2026</span>
-            <h3 class="article-card-title">Sri Lankan smiles</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/y5mkvzgr71TYydDVSTp4" target="_blank" rel="noopener" class="article-card reveal-up" data-category="career">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(46,204,113,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">📋</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Career</span>
-            <span class="article-card-date">28 Dec 2025</span>
-            <h3 class="article-card-title">The 2026 career playbook: What we know for now</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/rnDpOIog0dcsvMZ0lYRy" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(155,89,182,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">💭</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Growth</span>
-            <span class="article-card-date">21 Dec 2025</span>
-            <h3 class="article-card-title">Creating conversation</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/wlHLT2MQbqzaVPfCkNva" target="_blank" rel="noopener" class="article-card reveal-up" data-category="culture">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(231,76,60,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🧱</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Interview</span>
-            <span class="article-card-date">21 Dec 2025</span>
-            <h3 class="article-card-title">Building emotions brick by brick with Azeem Saheer</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/kE5rGs2u1ifxycJ5sUTA" target="_blank" rel="noopener" class="article-card reveal-up" data-category="skills">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(52,152,219,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🎨</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Skills</span>
-            <span class="article-card-date">14 Dec 2025</span>
-            <h3 class="article-card-title">Relearning design thinking</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/XkJoTus9aRahOB8f4G0N" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(46,204,113,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">💪</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Growth</span>
-            <span class="article-card-date">07 Dec 2025</span>
-            <h3 class="article-card-title">Relearning resilience</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/qOJtbfxKnboCzuqmLbNY" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(241,196,15,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🔥</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Growth</span>
-            <span class="article-card-date">23 Nov 2025</span>
-            <h3 class="article-card-title">Bringing 10% more energy than 90% of people</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/2mFpaN5hZITcilaGPoXh" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(155,89,182,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">📓</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Growth</span>
-            <span class="article-card-date">16 Nov 2025</span>
-            <h3 class="article-card-title">Be teachable, be like a notebook</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/so0CgKLw1pRNGOLfAtqc" target="_blank" rel="noopener" class="article-card reveal-up" data-category="skills">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(52,152,219,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🔀</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Skills</span>
-            <span class="article-card-date">09 Nov 2025</span>
-            <h3 class="article-card-title">Relearning adaptability</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/H87vEp5kFewCr3et4gu9" target="_blank" rel="noopener" class="article-card reveal-up" data-category="career">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(46,204,113,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🎯</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Career</span>
-            <span class="article-card-date">02 Nov 2025</span>
-            <h3 class="article-card-title">What you should know about job hunting</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/Y2Xx73VrtFCKiODctrZx" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(231,76,60,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">❤️</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Growth</span>
-            <span class="article-card-date">02 Nov 2025</span>
-            <h3 class="article-card-title">Relearning empathy at work</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/vhGZwIzcvIqbaC73McQ2" target="_blank" rel="noopener" class="article-card reveal-up" data-category="ai">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(46,204,113,0.15), rgba(10,10,10,0.9));">
-            <div class="article-icon">🛡</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">AI</span>
-            <span class="article-card-date">26 Oct 2025</span>
-            <h3 class="article-card-title">Can AI skills be your career insurance policy?</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/y2okrfz2wF4ty2yNsr3y" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(155,89,182,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">👂</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Growth</span>
-            <span class="article-card-date">19 Oct 2025</span>
-            <h3 class="article-card-title">Relearning how to listen</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/jUk6HpVDwbXF2UuCwp9U" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(241,196,15,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">⏰</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Growth</span>
-            <span class="article-card-date">05 Oct 2025</span>
-            <h3 class="article-card-title">Managing time and energy</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/cbtFTx3j9XNbWsnYm316" target="_blank" rel="noopener" class="article-card reveal-up" data-category="growth">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(52,152,219,0.12), rgba(10,10,10,0.9));">
-            <div class="article-icon">🗣</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Communication</span>
-            <span class="article-card-date">21 Sep 2025</span>
-            <h3 class="article-card-title">How you say it matters</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-        <a href="https://www.themorning.lk/articles/A12t41SEyToPetyFavHC" target="_blank" rel="noopener" class="article-card reveal-up" data-category="skills">
-          <div class="article-card-img" style="background: linear-gradient(135deg, rgba(46,204,113,0.15), rgba(10,10,10,0.9));">
-            <div class="article-icon">🌊</div>
-          </div>
-          <div class="article-card-body">
-            <span class="article-card-tag">Skills</span>
-            <span class="article-card-date">07 Sep 2025</span>
-            <h3 class="article-card-title">The new wave of skills — What got us here won't get us there</h3>
-            <span class="article-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-          </div>
-        </a>
-
-      </div>
+    <div class="contact-grid reveal">
+      <a href="https://cal.com/cocoon-ammar/ammar-ahamed" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+        <span class="contact-card-label">Book a Meeting</span>
+      </a>
+      <a href="https://wa.me/94775875997" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+        <span class="contact-card-label">WhatsApp Me</span>
+      </a>
+      <a href="https://www.linkedin.com/in/ammarahamed/" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+        <span class="contact-card-label">LinkedIn</span>
+      </a>
     </div>
   </section>
 
