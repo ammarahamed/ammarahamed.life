@@ -467,15 +467,26 @@ strong { font-weight: 600; color: var(--text); }
 .process-step p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
 .process-icon svg { color: var(--text); }
 
-.process-disclaimer {
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  font-size: 0.88rem;
+.process-footnote {
+  margin-top: 20px;
+  font-size: 0.82rem;
   color: var(--text-muted);
-  font-style: italic;
+  opacity: 0.7;
 }
-.process-disclaimer em { font-style: italic; font-weight: 500; color: var(--text-secondary); }
+.process-footnote em { font-style: italic; }
+
+/* --- Volunteering --- */
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.volunteer-tags {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-top: 8px;
+}
 
 .process-cta {
   display: flex;
@@ -547,7 +558,7 @@ strong { font-weight: 600; color: var(--text); }
 .family-photo:hover img { transform: scale(1.03); }
 
 /* --- Contact --- */
-.cookie-text { font-size: 0.95rem; color: #a0a0a0; margin-bottom: 20px; line-height: 1.6; }
+.cookie-text { font-size: 1.2rem; color: #a0a0a0; margin-bottom: 24px; line-height: 1.6; }
 
 .schedule-link {
   display: inline-block;
@@ -628,6 +639,7 @@ strong { font-weight: 600; color: var(--text); }
   .testi-card { min-width: 300px; max-width: 300px; }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .process-cta { flex-direction: column; gap: 20px; text-align: center; }
+  .volunteer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
 
 @media (max-width: 640px) {
