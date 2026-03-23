@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ammar Ahamed — Growth Marketer. Founder. Storyteller.</title>
-  <meta name="description" content="Ammar Ahamed — Head of Growth at Vector Agents, Founder of Cocoon, Co-founder of Buildin Blocks. Everything strategy, growth, and applied AI.">
+  <meta name="description" content="Ammar Ahamed — Head of Growth at Vector Agents, Founder of Cocoon, Co-founder of Buildin Blocks. Strategy, growth, and applied AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-16QWK47231"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-16QWK47231');
+  </script>
   <script>
     (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
   </script>
@@ -16,375 +24,345 @@
 <body>
 
   <!-- Banner -->
-  <div class="top-banner">
-    <div class="banner-inner">
-      <span>For peace, justice, and prosperity for all. 🇵🇸</span>
-    </div>
-  </div>
+  <div class="banner">For peace, justice, and prosperity for all. 🇵🇸</div>
 
-  <!-- Navigation -->
+  <!-- Nav -->
   <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Ammar Ahamed</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links" id="navLinks">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#track-record" class="nav-link">Track Record</a>
-        <a href="#expertise" class="nav-link">Expertise</a>
-        <a href="articles.html" class="nav-link">Articles</a>
-        <a href="#contact" class="nav-link">Let's Talk</a>
-      </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <a href="#" class="nav-name">Ammar Ahamed</a>
+    <div class="nav-right">
+      <a href="https://www.linkedin.com/in/ammarahamed/" target="_blank" rel="noopener" class="nav-social">LinkedIn</a>
+      <a href="https://wa.me/94775875997" target="_blank" rel="noopener" class="nav-social">WhatsApp</a>
+      <a href="#work" class="nav-social">My Work</a>
+      <a href="https://cal.com/cocoon-ammar/ammar-ahamed" target="_blank" rel="noopener" class="nav-cta">Set up a chat ↗</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#work">My Work</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="articles.html">Articles</a>
+    <a href="https://www.linkedin.com/in/ammarahamed/" target="_blank">LinkedIn</a>
+    <a href="https://wa.me/94775875997" target="_blank">WhatsApp</a>
+    <a href="https://cal.com/cocoon-ammar/ammar-ahamed" target="_blank" class="nav-cta">Set up a chat ↗</a>
+  </div>
+
   <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-content">
-      <div class="hero-label reveal-up">Based in Sri Lanka. Working globally.</div>
-      <h1 class="hero-title">
-        <span class="hero-line reveal-up"><span class="text-gradient">Growth</span> Marketer.</span>
-        <span class="hero-line reveal-up">Founder.</span>
-        <span class="hero-line reveal-up">Storyteller.</span>
-      </h1>
-      <p class="hero-sub reveal-up">
-        I sit at the intersection of strategy, storytelling, and technology — helping brands and startups find their voice, reach their people, and grow beyond what they thought possible.
-      </p>
-      <div class="hero-stats reveal-up">
-        <div class="stat">
-          <span class="stat-number" data-target="12" data-suffix="X">0</span>
-          <span class="stat-label">Client Portfolio Growth</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number" data-target="412" data-suffix="%">0</span>
-          <span class="stat-label">Marketing ROI</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number" data-target="2430" data-suffix="%">0</span>
-          <span class="stat-label">Startup Growth</span>
-        </div>
+  <section class="hero">
+    <h1 class="hero-name reveal">Ammar<br>Ahamed</h1>
+    <p class="hero-tagline reveal">I'm a growth marketer who helps brands and startups find their voice, reach their people, and grow beyond what they thought possible.</p>
+    <p class="hero-tagline-small reveal">Based in Sri Lanka. Working with people everywhere. ☀️</p>
+  </section>
+
+  <!-- What I Do -->
+  <section class="section" id="work">
+    <h2 class="section-title reveal">What I've been up to</h2>
+    <p class="section-intro reveal">I sit at the intersection of strategy, storytelling, and technology. Here's where I'm putting my energy right now 🌱</p>
+
+    <div class="work-grid">
+      <div class="work-card reveal">
+        <div class="work-card-label">2025 — Now</div>
+        <h3 class="work-card-title">Vector Agents</h3>
+        <p class="work-card-role">Head of Growth & Marketing</p>
+        <p class="work-card-desc">Building digital employees with human outcomes. Leading brand, product marketing, GTM strategy, and growth for an AI company based in Singapore.</p>
       </div>
-      <a href="https://wa.me/94775875997" target="_blank" rel="noopener" class="hero-cta reveal-up">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span>Let's Chat on WhatsApp</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-      </a>
-    </div>
-    <div class="scroll-indicator">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
+      <div class="work-card reveal">
+        <div class="work-card-label">2025 — Now</div>
+        <h3 class="work-card-title">Cocoon</h3>
+        <p class="work-card-role">Founder</p>
+        <p class="work-card-desc">Upskilling and reskilling talent for the future. Building a skills directory to connect people with the learning they need to stay relevant.</p>
+      </div>
+      <div class="work-card reveal">
+        <div class="work-card-label">2020 — Now</div>
+        <h3 class="work-card-title">Buildin Blocks</h3>
+        <p class="work-card-role">Co-founder & Head of Strategy</p>
+        <p class="work-card-desc">A marketing agency born during the lockdowns. 12X growth in revenue since 2023. Working across tech, agriculture, fashion, logistics, health, and more.</p>
+      </div>
     </div>
   </section>
 
   <!-- About -->
-  <section class="section section-light" id="about">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-label reveal-up">About Me</div>
-        <div class="section-content">
-          <h2 class="section-title reveal-up">Here's a little about the person behind the work.</h2>
-          <div class="about-text">
-            <p class="reveal-up">I'm a growth marketer with product and brand marketing experience across agency and in-house settings. From executive communications to customer engagement — I've worked with some of the best brands and startups in South Asia, the UK, and globally.</p>
-            <p class="reveal-up">From my first career as a digital marketer to the interview-inspired journalist to the copywriting and content creation work I do today — there's nothing I love more than sitting down with another human to uncover the story and heart behind their work.</p>
-            <p class="reveal-up">Currently, I'm managing marketing and growth at <strong>Vector Agents</strong> — an AI company building digital employees with human outcomes. I'm also building <strong>Cocoon</strong>, a platform for upskilling and reskilling talent for the future. And I continue to co-lead <strong>Buildin Blocks</strong>, the marketing agency I co-founded during the 2020 lockdowns.</p>
-            <p class="reveal-up">I love to speak, write, and connect. I play basketball, hockey, and swim. I've always loved a hike to the mountains, a visit to the beach, or a ride to the countryside on a motorbike.</p>
-          </div>
-          <div class="about-details reveal-up">
-            <div class="detail">
-              <span class="detail-label">Location</span>
-              <span class="detail-value">Sri Lanka</span>
-            </div>
-            <div class="detail">
-              <span class="detail-label">Education</span>
-              <span class="detail-value">MSc Strategic Marketing — Queen Margaret University</span>
-            </div>
-            <div class="detail">
-              <span class="detail-label">Languages</span>
-              <span class="detail-value">English, Sinhalese, Tamil</span>
-            </div>
-          </div>
+  <section class="section section-alt" id="about">
+    <h2 class="section-title reveal">A little about me 👋</h2>
+    <div class="about-layout">
+      <div class="about-text">
+        <p class="about-big reveal">I'm Ammar — a content creator, storyteller, and communications specialist who blends the best of writing and design into compelling and engaging brand content.</p>
+        <p class="reveal">I've worked with some of the best brands and startups in South Asia, the UK, and globally. From executive communications to customer engagement — from PR desks to AI boardrooms.</p>
+        <p class="reveal">From my first career as a digital marketer to the interview-inspired journalist to the copywriting and content creation work I do today — there's nothing I love more than sitting down with another human to uncover the story and heart behind their work.</p>
+        <p class="reveal">I love to speak, write, and connect. I play basketball, hockey, and swim. I've always loved a hike to the mountains, a visit to the beach, or a ride to the countryside on a motorbike. 🏔️</p>
+      </div>
+      <div class="about-details reveal">
+        <div class="detail-item">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">Sri Lanka</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Education</span>
+          <span class="detail-value">MSc Strategic Marketing — Queen Margaret University</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Languages</span>
+          <span class="detail-value">English, Sinhalese, Tamil</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Track Record -->
-  <section class="section" id="track-record">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-label reveal-up">Track Record</div>
-        <div class="section-content">
-          <h2 class="section-title reveal-up">Every chapter taught me something new.</h2>
-          <p class="story-intro reveal-up">From PR desks to AI boardrooms — here's how the story unfolded.</p>
-
-          <div class="track-minimal">
-            <div class="track-row reveal-up current" data-expandable>
-              <span class="track-dot"></span>
-              <div class="track-info">
-                <span class="track-name">Vector Agents</span>
-                <span class="track-role">Head of Growth & Marketing</span>
-              </div>
-              <span class="track-date">2025 — Now</span>
-              <div class="track-expand">
-                <p>Building digital employees with human outcomes. Leading brand, product marketing, GTM strategy, and growth for an AI company based in Singapore.</p>
-              </div>
-            </div>
-            <div class="track-row reveal-up current" data-expandable>
-              <span class="track-dot"></span>
-              <div class="track-info">
-                <span class="track-name">Cocoon</span>
-                <span class="track-role">Founder</span>
-              </div>
-              <span class="track-date">2025 — Now</span>
-              <div class="track-expand">
-                <p>Upskilling and reskilling talent for the future. Building a skills directory to connect people with the learning they need to stay relevant.</p>
-              </div>
-            </div>
-            <div class="track-row reveal-up current" data-expandable>
-              <span class="track-dot"></span>
-              <div class="track-info">
-                <span class="track-name">Buildin Blocks</span>
-                <span class="track-role">Co-founder & Head of Strategy</span>
-              </div>
-              <span class="track-date">2020 — Now</span>
-              <div class="track-expand">
-                <p>A marketing and communications agency born during the lockdowns. 12X growth in revenue since 2023. Working across technology, agriculture, fashion, logistics, health, and more.</p>
-              </div>
-            </div>
-            <div class="track-row reveal-up" data-expandable>
-              <span class="track-dot"></span>
-              <div class="track-info">
-                <span class="track-name">Kavida.ai</span>
-                <span class="track-role">Head of Growth Marketing</span>
-              </div>
-              <span class="track-date">2024 — 2025</span>
-              <div class="track-expand">
-                <p>Led brand and product marketing for AI agents in manufacturing. Designed GTM strategy for US and EU markets. Developed ABM campaigns and managed growth via organic, paid, and earned media.</p>
-              </div>
-            </div>
-            <div class="track-row reveal-up" data-expandable>
-              <span class="track-dot"></span>
-              <div class="track-info">
-                <span class="track-name">Twinery — MAS Holdings</span>
-                <span class="track-role">Marketing & Branding Entrepreneur</span>
-              </div>
-              <span class="track-date">2023 — 2024</span>
-              <div class="track-expand">
-                <p>Led marketing for Project Marketplace (B2C e-commerce) and SPRYNG (B2B/B2C health-tech). Managed growth marketing, performance analytics, and teams across Sri Lanka, US, and Malaysia.</p>
-              </div>
-            </div>
-            <div class="track-row reveal-up" data-expandable>
-              <span class="track-dot"></span>
-              <div class="track-info">
-                <span class="track-name">MAS Kreeda</span>
-                <span class="track-role">Sr. Executive — Branding & Comms</span>
-              </div>
-              <span class="track-date">2022 — 2023</span>
-              <div class="track-expand">
-                <p>Developed divisional communications strategy across 11 plants in Sri Lanka, Indonesia, and Jordan. 3140% growth in social media following and engagement.</p>
-              </div>
-            </div>
-            <div class="track-row reveal-up" data-expandable>
-              <span class="track-dot"></span>
-              <div class="track-info">
-                <span class="track-name">PR Wire (Edelman Affiliate)</span>
-                <span class="track-role">Public Relations Executive</span>
-              </div>
-              <span class="track-date">2022</span>
-              <div class="track-expand">
-                <p>Account manager for key accounts — Coca-Cola, Vivo, Asus, UPS, Hemas. Edelman affiliate, one of the fastest-growing agencies in the region.</p>
-              </div>
-            </div>
-            <div class="track-row reveal-up" data-expandable>
-              <span class="track-dot"></span>
-              <div class="track-info">
-                <span class="track-name">Communique PR</span>
-                <span class="track-role">Executive — PR & Communications</span>
-              </div>
-              <span class="track-date">2020 — 2022</span>
-              <div class="track-expand">
-                <p>Created and implemented PR, content, and digital marketing strategies for global and local brands across technology, insurance, food, banking, and more.</p>
-              </div>
-            </div>
-          </div>
-
-          <p class="story-footnote reveal-up">Clients include Coca-Cola, Vivo, Asus, UPS, Hemas, and 30+ brands across AI, health-tech, manufacturing, fashion, and FMCG.</p>
-        </div>
+  <!-- Stats -->
+  <section class="section stats-section">
+    <div class="stats-row reveal">
+      <div class="stat">
+        <span class="stat-number" data-target="12" data-suffix="X">0</span>
+        <span class="stat-label">Client Portfolio Growth</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number" data-target="412" data-suffix="%">0</span>
+        <span class="stat-label">Marketing ROI</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number" data-target="2430" data-suffix="%">0</span>
+        <span class="stat-label">Startup Growth</span>
       </div>
     </div>
   </section>
 
-  <!-- Expertise -->
-  <section class="section section-light" id="expertise">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-label reveal-up">Expertise</div>
-        <div class="section-content">
-          <h2 class="section-title reveal-up">This is what I bring to the table.</h2>
-          <div class="expertise-grid">
-            <div class="expertise-card reveal-up">
-              <div class="expertise-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M5 20V10l7-7 7 7v10M9 20v-5h6v5"/></svg>
-              </div>
-              <h3>Growth Marketing</h3>
-              <p>Full-funnel growth strategy, performance marketing, paid and organic media, SEO, CAC-to-LTV optimization, and data-driven campaigns.</p>
-            </div>
-            <div class="expertise-card reveal-up">
-              <div class="expertise-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
-              </div>
-              <h3>Brand & Strategy</h3>
-              <p>Brand positioning, identity development, go-to-market strategy, employer branding, and C-suite positioning for companies and founders.</p>
-            </div>
-            <div class="expertise-card reveal-up">
-              <div class="expertise-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </div>
-              <h3>Communications & PR</h3>
-              <p>Internal and external communications, media relations, press releases, crisis management, reputation management, and public relations strategy.</p>
-            </div>
-            <div class="expertise-card reveal-up">
-              <div class="expertise-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <h3>Content & Copywriting</h3>
-              <p>Thought leadership, scripts, ad copy, social media, blog writing, video scripts, audio scripts, and storytelling that converts.</p>
-            </div>
-            <div class="expertise-card reveal-up">
-              <div class="expertise-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </div>
-              <h3>Applied AI & Automation</h3>
-              <p>AI-powered marketing operations, internal tooling, marketing automation, and integrating AI agents into business workflows.</p>
-            </div>
-            <div class="expertise-card reveal-up">
-              <div class="expertise-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-              <h3>Training & Workshops</h3>
-              <p>Media skills, mobile journalism, public speaking, team building, and digital media skills training for teams and organizations.</p>
-            </div>
+  <!-- I can do things, I promise 🥹 -->
+  <section class="section section-alt" id="expertise">
+    <h2 class="section-title reveal">Things I'm actually good at 🥹</h2>
+    <p class="section-intro reveal">Not just buzzwords. These are skills I've built through real work, real clients, and real deadlines.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3>Growth Marketing</h3>
+        <p>Full-funnel growth strategy, performance marketing, paid and organic media, SEO, CAC-to-LTV optimization, and data-driven campaigns.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Brand & Strategy</h3>
+        <p>Brand positioning, identity development, go-to-market strategy, employer branding, and C-suite positioning for companies and founders.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Communications & PR</h3>
+        <p>Internal and external communications, media relations, press releases, crisis management, reputation management, and public relations strategy.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Content & Copywriting</h3>
+        <p>Thought leadership, scripts, ad copy, social media, blog writing, video scripts, audio scripts, and storytelling that converts.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Applied AI & Automation</h3>
+        <p>AI-powered marketing operations, internal tooling, marketing automation, and integrating AI agents into business workflows.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Training & Workshops</h3>
+        <p>Media skills, mobile journalism, public speaking, team building, and digital media skills training for teams and organizations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Quest for Rent Money -->
+  <section class="section" id="experience">
+    <h2 class="section-title reveal">My quest for rent money! 💼</h2>
+    <p class="section-intro reveal">Here's everywhere I've worked. Each one taught me something I couldn't have learned anywhere else.</p>
+
+    <div class="timeline">
+      <div class="timeline-row reveal" data-expandable>
+        <div class="timeline-left">
+          <span class="timeline-date">2025 — Now</span>
+        </div>
+        <div class="timeline-right">
+          <h3 class="timeline-company">Vector Agents</h3>
+          <p class="timeline-role">Head of Growth & Marketing</p>
+          <div class="timeline-expand">
+            <p>Building digital employees with human outcomes. Leading brand, product marketing, GTM strategy, and growth for an AI company based in Singapore.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-row reveal" data-expandable>
+        <div class="timeline-left">
+          <span class="timeline-date">2025 — Now</span>
+        </div>
+        <div class="timeline-right">
+          <h3 class="timeline-company">Cocoon</h3>
+          <p class="timeline-role">Founder</p>
+          <div class="timeline-expand">
+            <p>Upskilling and reskilling talent for the future. Building a skills directory to connect people with the learning they need to stay relevant.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-row reveal" data-expandable>
+        <div class="timeline-left">
+          <span class="timeline-date">2020 — Now</span>
+        </div>
+        <div class="timeline-right">
+          <h3 class="timeline-company">Buildin Blocks</h3>
+          <p class="timeline-role">Co-founder & Head of Strategy</p>
+          <div class="timeline-expand">
+            <p>A marketing and communications agency born during the lockdowns. 12X growth in revenue since 2023. Working across technology, agriculture, fashion, logistics, health, and more.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-row reveal" data-expandable>
+        <div class="timeline-left">
+          <span class="timeline-date">2024 — 2025</span>
+        </div>
+        <div class="timeline-right">
+          <h3 class="timeline-company">Kavida.ai</h3>
+          <p class="timeline-role">Head of Growth Marketing</p>
+          <div class="timeline-expand">
+            <p>Led brand and product marketing for AI agents in manufacturing. Designed GTM strategy for US and EU markets. Developed ABM campaigns and managed growth via organic, paid, and earned media.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-row reveal" data-expandable>
+        <div class="timeline-left">
+          <span class="timeline-date">2023 — 2024</span>
+        </div>
+        <div class="timeline-right">
+          <h3 class="timeline-company">Twinery — MAS Holdings</h3>
+          <p class="timeline-role">Marketing & Branding Entrepreneur</p>
+          <div class="timeline-expand">
+            <p>Led marketing for Project Marketplace (B2C e-commerce) and SPRYNG (B2B/B2C health-tech). Managed growth marketing, performance analytics, and teams across Sri Lanka, US, and Malaysia.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-row reveal" data-expandable>
+        <div class="timeline-left">
+          <span class="timeline-date">2022 — 2023</span>
+        </div>
+        <div class="timeline-right">
+          <h3 class="timeline-company">MAS Kreeda</h3>
+          <p class="timeline-role">Sr. Executive — Branding & Comms</p>
+          <div class="timeline-expand">
+            <p>Developed divisional communications strategy across 11 plants in Sri Lanka, Indonesia, and Jordan. 3140% growth in social media following and engagement.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-row reveal" data-expandable>
+        <div class="timeline-left">
+          <span class="timeline-date">2022</span>
+        </div>
+        <div class="timeline-right">
+          <h3 class="timeline-company">PR Wire (Edelman Affiliate)</h3>
+          <p class="timeline-role">Public Relations Executive</p>
+          <div class="timeline-expand">
+            <p>Account manager for key accounts — Coca-Cola, Vivo, Asus, UPS, Hemas. Edelman affiliate, one of the fastest-growing agencies in the region.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-row reveal" data-expandable>
+        <div class="timeline-left">
+          <span class="timeline-date">2020 — 2022</span>
+        </div>
+        <div class="timeline-right">
+          <h3 class="timeline-company">Communique PR</h3>
+          <p class="timeline-role">Executive — PR & Communications</p>
+          <div class="timeline-expand">
+            <p>Created and implemented PR, content, and digital marketing strategies for global and local brands across technology, insurance, food, banking, and more.</p>
           </div>
         </div>
       </div>
     </div>
+
+    <p class="footnote reveal">Clients include Coca-Cola, Vivo, Asus, UPS, Hemas, and 30+ brands across AI, health-tech, manufacturing, fashion, and FMCG.</p>
   </section>
 
   <!-- Writing -->
-  <section class="section" id="writing">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-label reveal-up">Writing</div>
-        <div class="section-content">
-          <h2 class="section-title reveal-up">Words are how I make sense of the world.</h2>
-          <p class="reveal-up" style="margin-bottom: var(--gap);">Contributing columnist at <strong>The Morning</strong> — writing about AI, career, startups, and business in Sri Lanka and globally.</p>
+  <section class="section section-alt" id="writing">
+    <h2 class="section-title reveal">I write things too ✍️</h2>
+    <p class="section-intro reveal">Contributing columnist at <strong>The Morning</strong> — writing about AI, career, startups, and business in Sri Lanka and globally.</p>
 
-          <div class="featured-articles">
-            <a href="https://www.themorning.lk/articles/djltrAgGYIW1L455Ygie" target="_blank" rel="noopener" class="featured-article reveal-up">
-              <span class="fa-date">08 Mar 2026</span>
-              <span class="fa-title">Why rare skill combinations beat deep expertise</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-            </a>
-            <a href="https://www.themorning.lk/articles/d5ZQYKTvcKtrWSpoKWbg" target="_blank" rel="noopener" class="featured-article reveal-up">
-              <span class="fa-date">22 Feb 2026</span>
-              <span class="fa-title">Empathy in the age of digital employees</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-            </a>
-            <a href="https://www.themorning.lk/articles/JNA5p8Q9hnha7XUMmmgs" target="_blank" rel="noopener" class="featured-article reveal-up">
-              <span class="fa-date">25 Jan 2026</span>
-              <span class="fa-title">Are we prompting right?</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-            </a>
-            <a href="https://www.themorning.lk/articles/vhGZwIzcvIqbaC73McQ2" target="_blank" rel="noopener" class="featured-article reveal-up">
-              <span class="fa-date">26 Oct 2025</span>
-              <span class="fa-title">Can AI skills be your career insurance policy?</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-            </a>
-            <a href="https://www.themorning.lk/articles/A12t41SEyToPetyFavHC" target="_blank" rel="noopener" class="featured-article reveal-up">
-              <span class="fa-date">07 Sep 2025</span>
-              <span class="fa-title">The new wave of skills — What got us here won't get us there</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-            </a>
-          </div>
+    <div class="articles-list">
+      <a href="https://www.themorning.lk/articles/djltrAgGYIW1L455Ygie" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">08 Mar 2026</span>
+        <span class="article-title">Why rare skill combinations beat deep expertise</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/d5ZQYKTvcKtrWSpoKWbg" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">22 Feb 2026</span>
+        <span class="article-title">Empathy in the age of digital employees</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/JNA5p8Q9hnha7XUMmmgs" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">25 Jan 2026</span>
+        <span class="article-title">Are we prompting right?</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/vhGZwIzcvIqbaC73McQ2" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">26 Oct 2025</span>
+        <span class="article-title">Can AI skills be your career insurance policy?</span>
+        <span class="article-arrow">↗</span>
+      </a>
+      <a href="https://www.themorning.lk/articles/A12t41SEyToPetyFavHC" target="_blank" rel="noopener" class="article-row reveal">
+        <span class="article-date">07 Sep 2025</span>
+        <span class="article-title">The new wave of skills — What got us here won't get us there</span>
+        <span class="article-arrow">↗</span>
+      </a>
+    </div>
 
-          <a href="articles.html" class="view-all-link reveal-up">
-            View all 27 articles
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+    <a href="articles.html" class="view-all reveal">View all 27 articles →</a>
 
-          <blockquote class="quote reveal-up">
-            "Your voice is powerful. Your work is powerful. And your story needs to be powerful enough to turn your readers and viewers into the clients and customers you've been dreaming about."
-          </blockquote>
-        </div>
+    <blockquote class="quote reveal">
+      "Your voice is powerful. Your work is powerful. And your story needs to be powerful enough to turn your readers and viewers into the clients and customers you've been dreaming about."
+    </blockquote>
+  </section>
+
+  <!-- Family -->
+  <section class="section" id="family">
+    <h2 class="section-title reveal">The people who made me who I am ❤️</h2>
+    <div class="family-layout">
+      <div class="family-text">
+        <p class="reveal">My family keeps me motivated. My mum has gone through a lot and she is a custodian for who I am today. My brothers and my grandma have always stood by my side. So have my friends. They are there for me when I need them and hopefully, I would too.</p>
+        <p class="reveal">The World is full of so many beautiful hearts, work and events — yet to be discovered and told.</p>
+        <p class="family-hashtag reveal">#AlHomdulillah</p>
+      </div>
+      <div class="family-photo reveal">
+        <img src="family.jpg" alt="Ammar with his brothers" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- Family & Personal -->
-  <section class="section section-light" id="family">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-label reveal-up">Personal</div>
-        <div class="section-content">
-          <h2 class="section-title reveal-up">The people who made me who I am.</h2>
-          <div class="family-content">
-            <div class="family-text">
-              <p class="reveal-up">My family keeps me motivated. My mum has gone through a lot and she is a custodian for who I am today. My brothers and my grandma have always stood by my side. So have my friends. They are there for me when I need them and hopefully, I would too.</p>
-              <p class="reveal-up">The World is full of so many beautiful hearts, work and events — yet to be discovered and told.</p>
-              <p class="reveal-up family-hashtag">#AlHomdulillah</p>
-            </div>
-            <div class="family-photo reveal-up">
-              <img src="family.jpg" alt="Ammar Ahamed with his brothers" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Cookie / Contact -->
+  <section class="section section-dark" id="contact">
+    <p class="cookie-text reveal">Wow, you scrolled all the way down. Here's a cookie 🍪</p>
+    <h2 class="contact-title reveal">Let's talk.</h2>
+    <p class="contact-sub reveal">Whether you need help with growth marketing, brand strategy, communications, or just want to connect — I'd love to hear from you.</p>
 
-  <!-- Contact -->
-  <section class="section section-green" id="contact">
-    <div class="container">
-      <div class="contact-content">
-        <h2 class="contact-title reveal-up">Let's grow<br>something together.</h2>
-        <p class="contact-sub reveal-up">Whether you need help with growth marketing, brand strategy, communications, or just want to connect — I'd love to hear from you.</p>
-        <div class="contact-actions reveal-up">
-          <a href="https://cal.com/cocoon-ammar/ammar-ahamed" target="_blank" rel="noopener" class="btn btn-primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span>Book a Meeting</span>
-          </a>
-          <a href="https://www.linkedin.com/in/ammarahamed/" target="_blank" rel="noopener" class="btn btn-secondary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            <span>LinkedIn</span>
-          </a>
-        </div>
-        <div class="contact-booking reveal-up">
-          <p class="booking-label">Or reach me directly</p>
-          <a href="https://wa.me/94775875997" target="_blank" rel="noopener" class="btn btn-book" id="bookingBtn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span>WhatsApp Me</span>
-          </a>
-        </div>
-      </div>
+    <div class="contact-grid reveal">
+      <a href="https://cal.com/cocoon-ammar/ammar-ahamed" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-card-icon">📅</span>
+        <span class="contact-card-label">Book a Meeting</span>
+        <span class="contact-card-detail">cal.com</span>
+      </a>
+      <a href="https://wa.me/94775875997" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-card-icon">💬</span>
+        <span class="contact-card-label">WhatsApp Me</span>
+        <span class="contact-card-detail">+94 77 587 5997</span>
+      </a>
+      <a href="https://www.linkedin.com/in/ammarahamed/" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-card-icon">💼</span>
+        <span class="contact-card-label">LinkedIn</span>
+        <span class="contact-card-detail">in/ammarahamed</span>
+      </a>
+      <a href="mailto:ammarahd097@gmail.com" class="contact-card">
+        <span class="contact-card-icon">✉️</span>
+        <span class="contact-card-label">Email</span>
+        <span class="contact-card-detail">ammarahd097@gmail.com</span>
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-name">Ammar Ahamed</span>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/ammarahamed/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:ammarahd097@gmail.com">Email</a>
-      </div>
-      <span class="footer-copy">&copy; 2026</span>
-    </div>
+    <span>Ammar Ahamed</span>
+    <span>&copy; 2026</span>
   </footer>
 
   <script src="script.js"></script>

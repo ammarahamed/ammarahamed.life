@@ -7,15 +7,23 @@
   <meta name="description" content="Articles by Ammar Ahamed — Contributing columnist at The Morning, writing about AI, career growth, skills, and the future of work.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-16QWK47231"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-16QWK47231');
+  </script>
   <script>
     (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
   </script>
   <style>
     /* Articles Page Specific */
     .articles-hero {
-      padding: calc(var(--nav-height) + 80px) 0 60px;
+      padding: calc(var(--nav-height) + var(--banner-height) + 80px) 0 60px;
       border-bottom: 1px solid var(--border-dark);
     }
 
@@ -151,7 +159,7 @@
     }
 
     .article-card-title {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'DM Serif Display', serif;
       font-size: 1.15rem;
       font-weight: 600;
       letter-spacing: -0.01em;
@@ -225,31 +233,21 @@
 <body>
 
   <!-- Banner -->
-  <div class="top-banner">
-    <div class="banner-inner">
-      <span>For peace, justice, and prosperity for all. 🇵🇸</span>
-    </div>
-  </div>
+  <div class="banner">For peace, justice, and prosperity for all. 🇵🇸</div>
 
-  <!-- Navigation -->
+  <!-- Nav -->
   <nav class="nav scrolled" id="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Ammar Ahamed</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html#about" class="nav-link">About</a>
-        <a href="index.html#track-record" class="nav-link">Track Record</a>
-        <a href="index.html#expertise" class="nav-link">Expertise</a>
-        <a href="articles.html" class="nav-link" style="color: var(--green);">Articles</a>
-        <a href="index.html#contact" class="nav-link">Let's Talk</a>
-      </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <a href="index.html" class="nav-name">Ammar Ahamed</a>
+    <div class="nav-right">
+      <a href="index.html" class="nav-social">Home</a>
+      <a href="https://www.linkedin.com/in/ammarahamed/" target="_blank" rel="noopener" class="nav-social">LinkedIn</a>
+      <a href="https://cal.com/cocoon-ammar/ammar-ahamed" target="_blank" rel="noopener" class="nav-cta">Set up a chat ↗</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
   <!-- Hero -->
@@ -605,15 +603,8 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-name">Ammar Ahamed</span>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="https://www.linkedin.com/in/ammarahamed/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:ammarahd097@gmail.com">Email</a>
-      </div>
-      <span class="footer-copy">&copy; 2026</span>
-    </div>
+    <span>Ammar Ahamed</span>
+    <span>&copy; 2026</span>
   </footer>
 
   <script src="script.js"></script>

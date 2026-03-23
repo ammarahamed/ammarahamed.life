@@ -1,11 +1,11 @@
 /* ============================================
-   AMMAR AHAMED — Animations & Interactions
-   Growth-themed: elements scale up, counters grow
+   AMMAR AHAMED — Interactions
+   Minimal, smooth, human
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Smooth scroll for anchor links ---
+  // --- Smooth scroll ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
@@ -15,66 +15,63 @@ document.addEventListener('DOMContentLoaded', () => {
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: 'smooth' });
       }
-      // Close mobile nav if open
-      navLinks.classList.remove('open');
+      // Close mobile menu
+      mobileMenu.classList.remove('open');
       navToggle.classList.remove('active');
     });
   });
 
-  // --- Nav scroll effect ---
+  // --- Nav scroll ---
   const nav = document.getElementById('nav');
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-    lastScroll = scrollY;
+    nav.classList.toggle('scrolled', window.scrollY > 50);
   }, { passive: true });
 
-  // --- Mobile nav toggle ---
+  // --- Mobile toggle ---
   const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('open');
-  });
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+    });
 
-  // --- Reveal on scroll (growth animation) ---
-  const revealElements = document.querySelectorAll('.reveal-up');
-
-  // Immediately reveal elements already in viewport on load
-  const heroSection = document.getElementById('hero');
-  if (heroSection) {
-    heroSection.querySelectorAll('.reveal-up').forEach((el, i) => {
-      setTimeout(() => el.classList.add('revealed'), i * 120);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        navToggle.classList.remove('active');
+      });
     });
   }
 
-  const revealObserver = new IntersectionObserver((entries) => {
+  // --- Reveal on scroll ---
+  const reveals = document.querySelectorAll('.reveal');
+
+  // Hero elements — reveal immediately with stagger
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    hero.querySelectorAll('.reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('revealed'), i * 150);
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('revealed');
-        revealObserver.unobserve(entry.target);
+        observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -60px 0px'
-  });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-  revealElements.forEach(el => {
-    // Skip hero elements — they animate on load
-    if (!heroSection || !heroSection.contains(el)) {
-      revealObserver.observe(el);
+  reveals.forEach(el => {
+    if (!hero || !hero.contains(el)) {
+      observer.observe(el);
     }
   });
 
-  // --- Counter animation (numbers growing up) ---
+  // --- Counter animation ---
   const counters = document.querySelectorAll('.stat-number');
   let countersAnimated = false;
 
@@ -88,65 +85,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.3 });
 
-  if (counters.length > 0) {
-    counterObserver.observe(counters[0].closest('.hero-stats'));
-  }
+  const statsRow = document.querySelector('.stats-row');
+  if (statsRow) counterObserver.observe(statsRow);
 
   function animateCounters() {
     counters.forEach(counter => {
       const target = parseInt(counter.dataset.target);
       const suffix = counter.dataset.suffix || '';
       const duration = 2000;
-      const startTime = performance.now();
+      const start = performance.now();
 
-      function easeOutExpo(t) {
-        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-      }
+      function ease(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
 
-      function updateCounter(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easedProgress = easeOutExpo(progress);
-        const current = Math.floor(easedProgress * target);
-
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const current = Math.floor(ease(progress) * target);
         counter.textContent = current.toLocaleString() + suffix;
-
-        if (progress < 1) {
-          requestAnimationFrame(updateCounter);
-        } else {
-          counter.textContent = target.toLocaleString() + suffix;
-        }
+        if (progress < 1) requestAnimationFrame(update);
+        else counter.textContent = target.toLocaleString() + suffix;
       }
 
-      requestAnimationFrame(updateCounter);
+      requestAnimationFrame(update);
     });
   }
 
-  // --- Parallax on hero background ---
-  const heroBg = document.querySelector('.hero-bg-pattern');
-  if (heroBg) {
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
-      }
-    }, { passive: true });
-  }
-
-  // --- Track row expand on click ---
-  document.querySelectorAll('.track-row[data-expandable]').forEach(row => {
+  // --- Timeline expand ---
+  document.querySelectorAll('.timeline-row[data-expandable]').forEach(row => {
     row.addEventListener('click', () => {
       const wasExpanded = row.classList.contains('expanded');
-
-      // Close all
-      document.querySelectorAll('.track-row.expanded').forEach(r => {
-        r.classList.remove('expanded');
-      });
-
-      // Toggle clicked
-      if (!wasExpanded) {
-        row.classList.add('expanded');
-      }
+      document.querySelectorAll('.timeline-row.expanded').forEach(r => r.classList.remove('expanded'));
+      if (!wasExpanded) row.classList.add('expanded');
     });
   });
 
@@ -154,39 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
 
-  // Load saved theme
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    html.setAttribute('data-theme', savedTheme);
-  }
+  const saved = localStorage.getItem('theme');
+  if (saved) html.setAttribute('data-theme', saved);
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
     });
   }
-
-  // --- Active nav link on scroll ---
-  const sections = document.querySelectorAll('section[id]');
-
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY + 120;
-
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-      const link = document.querySelector(`.nav-link[href="#${id}"]`);
-
-      if (link && link.classList) {
-        if (scrollY >= top && scrollY < top + height) {
-          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        }
-      }
-    });
-  }, { passive: true });
 });
