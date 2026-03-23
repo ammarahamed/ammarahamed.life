@@ -215,6 +215,7 @@ strong { font-weight: 600; color: var(--text); }
   color: var(--text-muted);
 }
 
+
 /* --- Sections --- */
 .section {
   padding: var(--section-pad) clamp(24px, 4vw, 48px);
