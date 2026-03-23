@@ -463,6 +463,17 @@ strong { font-weight: 600; color: var(--text); }
 .process-icon { font-size: 1.8rem; }
 .process-step h4 { font-size: 0.95rem; font-weight: 500; letter-spacing: -0.01em; }
 .process-step p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+.process-icon svg { color: var(--text); }
+
+.process-disclaimer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.process-disclaimer em { font-style: italic; font-weight: 500; color: var(--text-secondary); }
 
 .process-cta {
   display: flex;
