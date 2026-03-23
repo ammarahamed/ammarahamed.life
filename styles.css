@@ -319,8 +319,7 @@ strong { font-weight: 600; color: var(--text); }
   align-items: start;
 }
 
-.about-text p { margin-bottom: 24px; color: var(--text-secondary); }
-.about-big { font-size: 1.15rem; color: var(--text) !important; font-weight: 400; line-height: 1.6; }
+.about-text p { margin-bottom: 24px; font-size: 1.15rem; color: var(--text); font-weight: 400; line-height: 1.6; }
 
 .about-details { display: flex; flex-direction: column; gap: 28px; padding-top: 8px; }
 .detail-item { display: flex; flex-direction: column; gap: 4px; }
