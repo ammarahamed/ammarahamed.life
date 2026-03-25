@@ -213,6 +213,29 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const track = carouselSlider.parentElement;
+
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = touchStartX - touchEndX;
+      if (Math.abs(swipeDistance) > 50) {
+        if (swipeDistance > 0 && carouselIndex < carouselCards.length - 1) {
+          carouselIndex++;
+          slideCarousel();
+        } else if (swipeDistance < 0 && carouselIndex > 0) {
+          carouselIndex--;
+          slideCarousel();
+        }
+      }
+    }, { passive: true });
+
     // Initialize — start at first card
     carouselIndex = 0;
     setTimeout(() => slideCarousel(), 100);
