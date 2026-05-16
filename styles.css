@@ -737,7 +737,7 @@ strong { font-weight: 600; color: var(--text); }
 /* --- Blog Grid (Articles Page) --- */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   margin-bottom: 48px;
 }
@@ -815,6 +815,9 @@ strong { font-weight: 600; color: var(--text); }
   transform: translate(3px, -3px);
 }
 
+@media (max-width: 991px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 640px) {
   .blog-grid { grid-template-columns: 1fr; }
 }
