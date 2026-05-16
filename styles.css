@@ -734,6 +734,91 @@ strong { font-weight: 600; color: var(--text); }
 .view-all { display: inline-block; font-size: 0.95rem; font-weight: 500; margin-bottom: 48px; transition: opacity 0.3s var(--ease); }
 .view-all:hover { opacity: 0.6; }
 
+/* --- Blog Grid (Articles Page) --- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.blog-card {
+  display: block;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.3s var(--ease);
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--text-muted);
+}
+[data-theme="dark"] .blog-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.blog-card-art {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 10;
+  background: #f5f3ef;
+}
+[data-theme="dark"] .blog-card-art {
+  background: #1a1a1a;
+}
+[data-theme="dark"] .blog-card-art path,
+[data-theme="dark"] .blog-card-art line,
+[data-theme="dark"] .blog-card-art polyline,
+[data-theme="dark"] .blog-card-art circle:not(.accent),
+[data-theme="dark"] .blog-card-art ellipse:not(.accent) {
+  stroke: #c0c0c0;
+}
+[data-theme="colorful"] .blog-card-art {
+  background: #F4F8FE;
+}
+
+.blog-card-body {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.blog-card-date {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.blog-card-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--text);
+  transition: color 0.3s var(--ease);
+}
+.blog-card:hover .blog-card-title {
+  color: var(--text-muted);
+}
+
+.blog-card-arrow {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: transform 0.3s var(--ease);
+}
+.blog-card:hover .blog-card-arrow {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 640px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
+
 .quote {
   font-size: clamp(1.1rem, 1.8vw, 1.35rem);
   line-height: 1.55;
